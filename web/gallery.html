@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Photo Books</title>
+<style>
+
+
+
+        /* Web Fonts */
+        
+
+        :root {
+            --bg-color: #ffffff;
+            --card-bg: #d9d9d9;
+            --text-color: #000000;
+            --accent-color: #0080c0;
+            --font-family: 'Noto Sans JP';
+            
+            --gap-size: 30px;
+            --radius: 8px;
+            --col-pc: 3;
+            --col-mobile: 1;
+        }
+
+        body {
+            margin: 0;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: var(--font-family);
+        }
+
+        nav {
+            background: #333;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: #ffffff;
+        }
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: #ffffff; }
+        .nav-link.active { color: #0080c0; border-bottom: #ffffff; }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 0.1em; }
+        p.subtitle { opacity: 0.8; margin-top: 15px; font-size: 1.1rem; }
+        
+        .sns-box {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .sns-link {
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+        .sns-link:hover {
+            opacity: 1;
+            color: #fff;
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(var(--col-pc), 1fr);
+            gap: var(--gap-size);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #333333;
+            box-shadow: 0 4px 15px rgba(0,0,0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0, calc(0.2 + 0.2));
+            border-color: var(--accent-color);
+        }
+
+        .thumb-box {
+            width: 100%;
+            aspect-ratio: 3/2; 
+            background: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .card:hover .thumb-img { transform: scale(1.05); }
+
+        .info { padding: 20px; flex: 1; display: flex; flex-direction: column; text-align: left; }
+        .work-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+        .work-desc { font-size: 0.95rem; opacity: 0.8; line-height: 1.6; }
+        .view-btn { 
+            margin-top: auto; 
+            padding-top: 20px; 
+            color: var(--accent-color); 
+            font-size: 0.9rem; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        footer {
+            text-align:center; padding: 40px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(var(--col-mobile), 1fr);
+                gap: 15px;
+            }
+            h1 { font-size: 1.8rem; }
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+<nav>
+<div class="nav-container">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="profile.html">Profile</a>
+<a class="nav-link active" href="gallery.html">Gallery</a>
+<a class="nav-link" href="news.html">News</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+</nav>
+<header>
+<h1>Digital Photo Books</h1>
+<p class="subtitle">作品一覧</p>
+<div class="sns-box">
+</div>
+</header>
+<main class="gallery-container">
+<a class="card" href="../製本/web_白波/index.html" target="_blank">
+<div class="thumb-box"><img class="thumb-img" loading="lazy" src="../製本/web_白波/assets/18035_タイトル.jpg.jpg"/></div>
+<div class="info">
+<div class="work-title">白波</div>
+<div class="work-desc">この学校に入学して初めて電車通学を経験しました...</div>
+<div class="view-btn">View Book →</div>
+</div>
+</a>
+</main>
+<footer>
+    © 2026 Sosaku Kawahara. All rights reserved.
+</footer>
+</body>
+</html>

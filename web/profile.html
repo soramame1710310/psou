@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile | My Photo Gallery</title>
+<style>
+        /* 共通CSS（index.htmlと同じ内容） */
+        :root { --bg-color: #1a1a1a; --card-bg: #252525; --text-color: #eeeeee; --accent-color: #0080c0; --font-family: 'Noto Sans JP'; }
+        body { margin: 0; background-color: #ffffff; color: #ffffff; font-family: var(--font-family); }
+        nav { background: #373737; padding: 15px 0; position: sticky; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 30px; }
+        .nav-link { color: var(--text-color); text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent-color); }
+        .nav-link.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+        header { padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 0.1em; }
+        p.subtitle { opacity: 0.8; margin-top: 15px; font-size: 1.1rem; }
+        footer { text-align:center; padding: 40px; opacity: 0.5; font-size: 0.8rem; border-top: #ffffff; }
+
+        /* profile.html 専用スタイル */
+        .profile-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .profile-flex {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            /* ここを修正: 画像を丸くする */
+            border-radius: 50%;
+            border: #ffffff;
+            flex-shrink: 0;
+        }
+        .profile-text h2 { color: #ffffff; margin-top: 0; }
+        .profile-text p { line-height: 1.8; opacity: 0.9; }
+
+        .gear-list {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: #ffffff;
+        }
+        .gear-list h3 { border-bottom: #c0c0c0; padding-bottom: 10px; margin-top: 0; }
+        ul { list-style: square; padding-left: 20px; opacity: 0.9; }
+        li { margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .profile-flex { flex-direction: column; align-items: center; text-align: center; }
+        }
+    
+body { color: #ffffff; }
+body { background: #000000 !important; }
+body { color: #ffffff !important; }
+body { background: #ffffff !important; }</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav>
+<div class="nav-container">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="profile.html">Profile</a>
+<a class="nav-link" href="gallery.html">Gallery</a>
+<a class="nav-link" href="news.html">News</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+</nav>
+<header>
+<h1 style="color: #0080c0">Profile</h1>
+<p class="subtitle" style="color: #000000">About Photographer</p>
+</header>
+<main class="profile-container">
+<div class="profile-flex">
+<!-- プロフィール画像 -->
+<img alt="Author" class="profile-img" src="DSC05120.jpg" style="border: 3px solid #c0c0c0"/>
+<div class="profile-text">
+<h2 style="color: #000000">準備中...</h2>
+<p>紹介文を考えています...</p>
+</div>
+</div>
+<div class="gear-list">
+<h3 style="background-color: #ffffff; color: #000000">...</h3>
+<ul style="background-color: #ffffff; color: #000000">
+<li style="color: #000000">...</li>
+<li style="border: #ffffff; color: #000000; background-color: #ffffff">...</li>
+<li style="color: #000000">...</li>
+<li style="color: #000000">...</li>
+</ul>
+</div>
+</main>
+<footer>© 2026 Sosaku Kawahara. All rights reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "path": "E:/白波(仮)/書き出し/製本/web_白波",
+      "title": "白波",
+      "desc": "Description here...",
+      "thumb": "E:/白波(仮)/書き出し/製本/web_白波\\assets\\18035_タイトル.jpg.jpg"
+    }
+  ],
+  "settings": {
+    "site_title": "Digital Photo Books",
+    "site_desc": "作品一覧",
+    "author": "Sosaku Kawahara",
+    "sns": {
+      "x": "",
+      "insta": "",
+      "web": ""
+    },
+    "bg_color": "#1a1a1a",
+    "card_bg": "#252525",
+    "text_color": "#eeeeee",
+    "accent_color": "#0080c0",
+    "border_color": "#333333",
+    "col_pc": 3,
+    "col_mobile": 1,
+    "gap": 30,
+    "max_width": 1200,
+    "aspect": "4/3",
+    "text_align": "left",
+    "radius": 8,
+    "shadow": 0.2,
+    "border_width": 1,
+    "font": "アプリ明朝UD",
+    "use_custom_font": false,
+    "custom_font_path": ""
+  }
+}

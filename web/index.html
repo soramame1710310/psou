@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home | My Photo Gallery</title>
+<style>
+        /* 共通CSSここから (style.cssとして外部化推奨) */
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #252525;
+            --text-color: #eeeeee;
+            --accent-color: #0080c0;
+            --font-family: 'Noto Sans JP';
+            --radius: 8px;
+        }
+        body { margin: 0; background-color: #ffffff; color: #000000; font-family: var(--font-family); }
+        nav { background: rgba(0,0,0,0.8); padding: 15px 0; position: sticky; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 30px; }
+        .nav-link { color: var(--text-color); text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent-color); }
+        .nav-link.active { color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+        header { padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 0.1em; }
+        p.subtitle { opacity: 0.8; margin-top: 15px; font-size: 1.1rem; }
+        footer { text-align:center; padding: 40px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        /* 共通CSSここまで */
+
+        /* index.html 専用スタイル */
+        .hero {
+            height: 80vh;
+            /* 背景画像の設定 */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('DSC03193.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+        .btn-main {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        .btn-main:hover { opacity: 0.8; }
+        
+        .section-title { text-align: center; margin: 40px 0 20px; font-size: 1.8rem; border-left: 5px solid var(--accent-color); display: inline-block; padding-left: 15px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+
+        /* --- SNSボタン用スタイル --- */
+        .sns-section {
+            margin-top: 60px; /* 上の要素との間隔 */
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .sns-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* ボタン同士の間隔 */
+            flex-wrap: wrap; /* スマホで折り返す */
+            margin-top: 20px;
+        }
+        .btn-sns {
+            display: inline-block;
+            padding: 12px 24px;
+            
+            /* 【通常時の設定】 黒背景＋薄い枠線 */
+            background-color: #000000;
+            border: 1px solid #555; 
+            color: #fff;
+            
+            text-decoration: none;
+            border-radius: 5px; /* 角丸 */
+            font-weight: bold;
+            transition: all 0.3s; /* 色の変化をなめらかに */
+            font-size: 0.9rem;
+            min-width: 100px; /* ボタンの最小幅 */
+            text-align: center;
+        }
+
+        /* 共通ホバー動作：少し浮く */
+        .btn-sns:hover {
+            transform: translateY(-2px);
+            border-color: transparent; /* 色が付くときは枠線を消す */
+        }
+
+        /* 【ホバー時の色設定】 カーソルが乗ったときの色 */
+        .btn-note:hover { 
+            background-color: #41c9b4; /* note緑 */
+        }
+        .btn-insta:hover { 
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); /* インスタグラデーション */
+            border: none;
+        }
+        .btn-x:hover { 
+            background-color: #333; /* Xは黒なので、ホバーで少し明るいグレーにして反応させる */
+            border-color: #fff;    /* 枠線を白くして強調 */
+        }
+        .btn-youtube:hover { 
+            background-color: #FF0000; /* YouTube赤 */
+        }
+    
+body { color: #000000; }
+body { color: #000000; }
+body { color: #000000; }
+body { background: #0080c0 !important; }
+body { color: #ffffff !important; }
+body { background: #ffffff !important; }
+body { color: #000000 !important; }</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav>
+<div class="nav-container">
+<a class="nav-link active" href="index.html">Home</a>
+<a class="nav-link" href="profile.html">Profile</a>
+<a class="nav-link" href="gallery.html">Gallery</a>
+<a class="nav-link" href="news.html">News</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+</nav>
+<div class="hero">
+<h2 style="color: #ffffff; text-align: left; font-size: 1; transform: scale(0.40); position: absolute; left: -50px; top: 100px">Sosaku Kawahara</h2>
+<p style="color: #ffffff; position: absolute; left: 30px; top: 250px">Digital Photo Book</p>
+<a class="btn-main" href="gallery.html" style="position: absolute; left: 875px; top: 670px">View Gallery</a>
+</div>
+<div class="container">
+<div class="section-title" style="position: absolute; font-size: 0px">Welcome</div><p style="line-height: 1.8; opacity: 0.9;">普段は作品を自分で製本しています。<br/>今回はやる気があったので、デジタルフォトブック形式で作品を公開してみました。<br/>「Gallery」ページより各作品をご覧ください。</p>
+<!-- SNSリンクエリア -->
+<div class="sns-section">
+<div class="section-title" style="font-size: 1.5rem; margin-bottom: 10px; border-left-color: #fff;">Follow Me</div>
+<div class="sns-container">
+<!-- 以下のhrefの中身をご自身のアカウントURLに書き換えてください -->
+<a class="btn-sns btn-note" href="https://note.com/sou_1031" target="_blank">note</a>
+<a class="btn-sns btn-insta" href="https://www.instagram.com/so10_310/" target="_blank">Instagram</a>
+<a class="btn-sns btn-x" href="https://x.com/sou103100?s=21" target="_blank">X</a>
+<a class="btn-sns btn-youtube" href="https://www.youtube.com/@so10_310" target="_blank">YouTube</a>
+</div>
+</div>
+</div>
+<footer>© 2026 Sosaku Kawahara. All rights reserved.</footer>
+</body>
+</html>
